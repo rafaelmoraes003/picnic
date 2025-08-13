@@ -51,5 +51,21 @@ export class TicketHandler {
     }));
   }
 
+  public getMostRelevantUsers(): Occurrence[] {
+    const requesters: Record<string, number> = {};
 
+    this.tickets.forEach((ticket) => {
+      const requesterName = ticket.requester.name;
+      requesters[requesterName] = (requesters[requesterName] || 0) + 1;
+    });
+
+    return this.createOcurrence(requesters);
+  }
+
+  private createOcurrence(data: Record<string, number>): Occurrence[] {
+    return Object.entries(data).map(([name, occurrences]) => ({
+      name,
+      occurrences
+    })).sort((a, b) => b.occurrences - a.occurrences);
+  }
 }
