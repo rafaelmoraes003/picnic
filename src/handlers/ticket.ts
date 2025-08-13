@@ -62,6 +62,17 @@ export class TicketHandler {
     return this.createOcurrence(requesters);
   }
 
+  public getMostRelevantTickets(): Occurrence[] {
+    const ticketCounts: Record<string, number> = {};
+    const categorizedTickets = this.categorizeTickets();
+
+    categorizedTickets.forEach((ticket) => {
+      ticketCounts[ticket.category] = ticket.tickets.length;
+    });
+
+    return this.createOcurrence(ticketCounts);
+  }
+
   private createOcurrence(data: Record<string, number>): Occurrence[] {
     return Object.entries(data).map(([name, occurrences]) => ({
       name,
