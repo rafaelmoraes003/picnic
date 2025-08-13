@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Others",
+    "occurrences": 13
+  },
+  {
+    "name": "Returns and Exchanges",
+    "occurrences": 8
+  },
+  {
+    "name": "Product Issues",
+    "occurrences": 8
+  },
+  {
+    "name": "Payment and Billing Issues",
+    "occurrences": 7
+  },
+  {
+    "name": "Account Access Issues",
+    "occurrences": 6
+  },
+  {
+    "name": "Promotion and Pricing Issues",
+    "occurrences": 6
+  },
+  {
+    "name": "Order Status/Delivery",
+    "occurrences": 2
+  }
+]
